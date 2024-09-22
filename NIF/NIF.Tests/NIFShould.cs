@@ -11,5 +11,13 @@ namespace NIF.Tests {
 			);
 
 		}
+
+		[Test]
+		public void FailWhenStringIsTooShort()
+		{
+			Assert.Throws<TooShortException>(
+				() => Nif.NewNif("0123456")
+			);
+		}
 	}
 }

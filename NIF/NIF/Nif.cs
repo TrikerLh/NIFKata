@@ -9,6 +9,11 @@ public class Nif
 
 	public static Nif NewNif(string candidate)
 	{
-		throw new TooLoongException();
+		if (candidate.Length > 9)
+		{
+			throw new TooLoongException();
+		}
+
+		throw new TooShortException();
 	}
 }
