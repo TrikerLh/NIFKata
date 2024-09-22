@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using NIF.Exceptions;
 
 namespace NIF;
@@ -18,6 +19,13 @@ public class Nif
 			throw new LengthException();
 		}
 
-		throw new StructureException();
+		Regex re = new Regex("^[^0-9XYZ].*");
+
+		if (re.IsMatch(candidate))
+		{
+			throw new StructureException();
+		}
+
+		throw new BadMiddleFormatException();
 	}
 }

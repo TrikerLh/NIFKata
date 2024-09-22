@@ -26,7 +26,15 @@ namespace NIF.Tests {
 		{
 			Assert.Throws<StructureException>(
 				() => Nif.NewNif("A12345678")
-				);
+			);
+		}
+
+		[Test]
+		public void FailIfDoesntHave7DigitInTheMiddle()
+		{
+			Assert.Throws<BadMiddleFormatException>(
+				() => Nif.NewNif("0123X567R")
+			);
 		}
 	}
 }
