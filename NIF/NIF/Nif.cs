@@ -23,7 +23,7 @@ public class Nif
 
 		if (re.IsMatch(candidate))
 		{
-			throw new StructureException();
+			throw new BadStartsException();
 		}
 
 		throw new BadMiddleFormatException();

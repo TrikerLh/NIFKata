@@ -24,7 +24,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailIfStartsWithALetterOtherThan_X_Y_Z()
 		{
-			Assert.Throws<StructureException>(
+			Assert.Throws<BadStartsException>(
 				() => Nif.NewNif("A12345678")
 			);
 		}
