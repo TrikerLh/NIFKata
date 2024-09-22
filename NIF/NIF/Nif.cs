@@ -19,9 +19,9 @@ public class Nif
 			throw new LengthException();
 		}
 
-		Regex re = new Regex("^[^0-9XYZ].*");
+		Regex valid = new Regex("^[0-9XYZ].*");
 
-		if (re.IsMatch(candidate))
+		if (!valid.IsMatch(candidate))
 		{
 			throw new BadStartsException();
 		}
