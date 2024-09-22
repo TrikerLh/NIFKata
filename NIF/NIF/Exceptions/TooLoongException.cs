@@ -1,4 +1,4 @@
-namespace NIF;
+namespace NIF.Exceptions;
 
 public class TooLoongException : Exception
 {

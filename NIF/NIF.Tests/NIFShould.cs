@@ -1,4 +1,5 @@
 using NIF;
+using NIF.Exceptions;
 
 namespace NIF.Tests {
 	public class NIFShould {

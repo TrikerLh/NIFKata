@@ -1,3 +1,5 @@
+using NIF.Exceptions;
+
 namespace NIF;
 
 public class Nif
