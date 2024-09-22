@@ -20,5 +20,13 @@ namespace NIF.Tests {
 				() => Nif.NewNif("0123456")
 			);
 		}
+
+		[Test]
+		public void FailIfStartsWithALetterOtherThan_X_Y_Z()
+		{
+			Assert.Throws<StructureException>(
+				() => Nif.NewNif("A12345678")
+				);
+		}
 	}
 }

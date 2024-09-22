@@ -16,6 +16,11 @@ public class Nif
 			throw new TooLoongException();
 		}
 
-		throw new TooShortException();
+		if (candidate.Length < 9)
+		{
+			throw new TooShortException();
+		}
+
+		throw new StructureException();
 	}
 }
