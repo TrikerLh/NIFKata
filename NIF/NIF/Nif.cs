@@ -4,6 +4,8 @@ namespace NIF;
 
 public class Nif
 {
+	private const int Maxlength = 9;
+
 	private Nif(string candidate)
 	{
 		throw new NotImplementedException();
@@ -11,7 +13,7 @@ public class Nif
 
 	public static Nif NewNif(string candidate)
 	{
-		if (candidate.Length != 9)
+		if (candidate.Length != Maxlength)
 		{
 			throw new LengthException();
 		}
