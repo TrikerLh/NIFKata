@@ -7,7 +7,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailWhenStringIsTooLoong()
 		{
-			Assert.Throws<TooLoongException>(
+			Assert.Throws<LengthException>(
 				() => Nif.NewNif("1234567891011")
 			);
 
@@ -16,7 +16,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailWhenStringIsTooShort()
 		{
-			Assert.Throws<TooShortException>(
+			Assert.Throws<LengthException>(
 				() => Nif.NewNif("0123456")
 			);
 		}
