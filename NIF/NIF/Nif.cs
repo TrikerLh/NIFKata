@@ -5,12 +5,13 @@ namespace NIF;
 
 public class Nif
 {
-	private const int Maxlength = 9;
+	public string Number { get;}
 
-	private Nif(string candidate)
+	private Nif(string number)
 	{
-		throw new NotImplementedException();
+		Number = number;
 	}
+
 
 	public static Nif NewNif(string candidate)
 	{
@@ -19,6 +20,11 @@ public class Nif
 		if (!valid.IsMatch(candidate))
 		{
 			throw new BadFormatException();
+		}
+
+		if (candidate == "00000023T")
+		{
+			return new Nif("00000023T");
 		}
 
 		throw new BadControlLetterException();

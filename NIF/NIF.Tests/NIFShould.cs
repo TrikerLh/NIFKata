@@ -49,5 +49,13 @@ namespace NIF.Tests {
 				() => Nif.NewNif("00000000S")
 			);
 		}
+
+		[Test]
+		public void AcceptMod23being0()
+		{
+			var nif = Nif.NewNif("00000023T");
+
+			Assert.AreEqual("00000023T", nif.Number);
+		}
 	}
 }
