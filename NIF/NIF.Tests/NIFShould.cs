@@ -36,5 +36,12 @@ namespace NIF.Tests {
 				() => Nif.NewNif("0123X567R")
 			);
 		}
+
+		[Test]
+		public void FailIfDoesntEndWithAValidControLetter() {
+			Assert.Throws<InvalidEndFormatException>(
+				() => Nif.NewNif("01234567U")
+			);
+		}
 	}
 }

@@ -26,6 +26,13 @@ public class Nif
 			throw new BadStartsException();
 		}
 
-		throw new BadMiddleFormatException();
+		valid = new Regex("^.\\d{7}.*");
+
+		if (!valid.IsMatch(candidate))
+		{
+			throw new BadMiddleFormatException();
+		}
+
+		throw new InvalidEndFormatException();
 	}
 }
