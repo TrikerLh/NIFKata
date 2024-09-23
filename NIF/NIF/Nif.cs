@@ -14,17 +14,11 @@ public class Nif
 
 	public static Nif NewNif(string candidate)
 	{
-		Regex valid = new Regex("^[0-9XYZ]\\d{7}.$");
+		Regex valid = new Regex("^[0-9XYZ]\\d{7}[^UIOÑ0-9]$");
 
 		if (!valid.IsMatch(candidate))
 		{
 			throw new BadFormatException();
-		}
-
-		valid = new Regex(".*[^UIOÑ0-9]$");
-		if (!valid.IsMatch(candidate))
-		{
-			throw new InvalidEndFormatException();
 		}
 
 		throw new BadControlLetterException();

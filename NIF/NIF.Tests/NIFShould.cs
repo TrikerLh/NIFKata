@@ -38,7 +38,7 @@ namespace NIF.Tests {
 
 		[Test]
 		public void FailIfDoesntEndWithAValidControLetter() {
-			Assert.Throws<InvalidEndFormatException>(
+			Assert.Throws<BadFormatException>(
 				() => Nif.NewNif("01234567U")
 			);
 		}
