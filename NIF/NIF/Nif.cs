@@ -20,7 +20,13 @@ public class Nif
 		{
 			throw new BadFormatException();
 		}
-		
-		throw new InvalidEndFormatException();
+
+		valid = new Regex(".*[^UIOÑ0-9]$");
+		if (!valid.IsMatch(candidate))
+		{
+			throw new InvalidEndFormatException();
+		}
+
+		throw new BadControlLetterException();
 	}
 }

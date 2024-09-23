@@ -42,5 +42,12 @@ namespace NIF.Tests {
 				() => Nif.NewNif("01234567U")
 			);
 		}
+
+		[Test]
+		public void FailIfDoesntEndWithTheRightControLetter() {
+			Assert.Throws<BadControlLetterException>(
+				() => Nif.NewNif("00000000S")
+			);
+		}
 	}
 }
