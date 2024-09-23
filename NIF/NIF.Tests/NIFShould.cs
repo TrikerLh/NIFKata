@@ -50,12 +50,13 @@ namespace NIF.Tests {
 			);
 		}
 
-		[Test]
-		public void AcceptMod23being0()
+		[TestCase("00000023T")]
+		[TestCase("00000046T")]
+		public void AcceptMod23being0(string candidate)
 		{
-			var nif = Nif.NewNif("00000023T");
+			var nif = Nif.NewNif(candidate);
 
-			Assert.AreEqual("00000023T", nif.Number);
+			Assert.AreEqual(candidate, nif.Number);
 		}
 	}
 }

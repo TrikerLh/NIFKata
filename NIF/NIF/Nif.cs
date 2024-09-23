@@ -24,7 +24,11 @@ public class Nif
 
 		if (candidate == "00000023T")
 		{
-			return new Nif("00000023T");
+			return new Nif(candidate);
+		}
+
+		if (candidate == "00000046T") {
+			return new Nif(candidate);
 		}
 
 		throw new BadControlLetterException();
