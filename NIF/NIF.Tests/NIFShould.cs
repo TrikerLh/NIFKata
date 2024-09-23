@@ -1,7 +1,7 @@
 using NIF.Exceptions;
 
 namespace NIF.Tests {
-	public class NIFShould {
+	public class NifShould {
 
 		[Test]
 		public void FailWhenStringIsTooLoong()
@@ -52,11 +52,11 @@ namespace NIF.Tests {
 
 		[TestCase("00000023T")]
 		[TestCase("00000046T")]
-		public void AcceptMod23being0(string candidate)
+		public void AcceptMod23Being0(string candidate)
 		{
 			var nif = Nif.NewNif(candidate);
 
-			Assert.AreEqual(candidate, nif.Number);
+			Assert.That(nif.Number, Is.EqualTo(candidate));
 		}
 	}
 }
