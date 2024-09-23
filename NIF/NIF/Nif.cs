@@ -14,25 +14,13 @@ public class Nif
 
 	public static Nif NewNif(string candidate)
 	{
-		if (candidate.Length != Maxlength)
-		{
-			throw new LengthException();
-		}
-
-		Regex valid = new Regex("^[0-9XYZ].*");
+		Regex valid = new Regex("^[0-9XYZ]\\d{7}.$");
 
 		if (!valid.IsMatch(candidate))
 		{
-			throw new BadStartsException();
+			throw new BadFormatException();
 		}
-
-		valid = new Regex("^.\\d{7}.*");
-
-		if (!valid.IsMatch(candidate))
-		{
-			throw new BadMiddleFormatException();
-		}
-
+		
 		throw new InvalidEndFormatException();
 	}
 }

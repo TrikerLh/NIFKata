@@ -1,4 +1,3 @@
-using NIF;
 using NIF.Exceptions;
 
 namespace NIF.Tests {
@@ -7,7 +6,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailWhenStringIsTooLoong()
 		{
-			Assert.Throws<LengthException>(
+			Assert.Throws<BadFormatException>(
 				() => Nif.NewNif("1234567891011")
 			);
 
@@ -16,7 +15,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailWhenStringIsTooShort()
 		{
-			Assert.Throws<LengthException>(
+			Assert.Throws<BadFormatException>(
 				() => Nif.NewNif("0123456")
 			);
 		}
@@ -24,7 +23,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailIfStartsWithALetterOtherThan_X_Y_Z()
 		{
-			Assert.Throws<BadStartsException>(
+			Assert.Throws<BadFormatException>(
 				() => Nif.NewNif("A12345678")
 			);
 		}
@@ -32,7 +31,7 @@ namespace NIF.Tests {
 		[Test]
 		public void FailIfDoesntHave7DigitInTheMiddle()
 		{
-			Assert.Throws<BadMiddleFormatException>(
+			Assert.Throws<BadFormatException>(
 				() => Nif.NewNif("0123X567R")
 			);
 		}
