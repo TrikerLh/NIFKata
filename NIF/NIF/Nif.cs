@@ -32,6 +32,10 @@ public class Nif
 			return new Nif(candidate);
 		}
 
+		if (controlLetter == 'R' && modulus == 1) {
+			return new Nif(candidate);
+		}
+
 		throw new BadControlLetterException();
 	}
 }

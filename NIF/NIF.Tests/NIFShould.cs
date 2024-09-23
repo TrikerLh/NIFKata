@@ -58,5 +58,12 @@ namespace NIF.Tests {
 
 			Assert.That(nif.Number, Is.EqualTo(candidate));
 		}
+
+		[Test]
+		public void AcceptMod23Being1() {
+			var nif = Nif.NewNif("00000024R");
+
+			Assert.That(nif.Number, Is.EqualTo("00000024R"));
+		}
 	}
 }
