@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Text.RegularExpressions;
 using NIF.Exceptions;
 
@@ -22,12 +23,13 @@ public class Nif
 			throw new BadFormatException();
 		}
 
-		if (candidate == "00000023T")
-		{
-			return new Nif(candidate);
-		}
+		var controlLetter = candidate[8];
+		var numeric = Convert.ToInt32(candidate.Substring(0, 8));
+		var modulus = numeric % 23;
 
-		if (candidate == "00000046T") {
+
+		if (controlLetter == 'T' && modulus == 0)
+		{
 			return new Nif(candidate);
 		}
 
