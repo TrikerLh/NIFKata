@@ -60,10 +60,19 @@ namespace NIF.Tests {
 		}
 
 		[Test]
-		public void AcceptMod23Being1() {
+		public void AcceptMod23Being1() 
+		{
 			var nif = Nif.NewNif("00000024R");
 
 			Assert.That(nif.Number, Is.EqualTo("00000024R"));
+		}
+
+		[Test]
+		public void AcceptNieStartingWithX()
+		{
+			var nif = Nif.NewNif("X0000023T");
+
+			Assert.That(nif.Number, Is.EqualTo("X0000023T"));
 		}
 	}
 }

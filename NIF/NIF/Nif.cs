@@ -40,6 +40,16 @@ public class Nif
 
 	private static char GetControlLetter(string candidate)
 	{
+		if (candidate[0] == 'X')
+		{
+			candidate = candidate.Replace('X', '0');
+		}
+		if (candidate[0] == 'Y') {
+			candidate = candidate.Replace('Y', '1');
+		}
+		if (candidate[0] == 'Z') {
+			candidate = candidate.Replace('Z', '2');
+		}
 		var numeric = Convert.ToInt32(candidate.Substring(0, 8));
 		var modulus = numeric % 23;
 		return ControlMap[modulus];
