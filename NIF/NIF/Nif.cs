@@ -40,18 +40,17 @@ public class Nif
 
 	private static char GetControlLetter(string candidate)
 	{
-		if (candidate[0] == 'X')
-		{
-			candidate = candidate.Replace('X', '0');
-		}
-		if (candidate[0] == 'Y') {
-			candidate = candidate.Replace('Y', '1');
-		}
-		if (candidate[0] == 'Z') {
-			candidate = candidate.Replace('Z', '2');
-		}
+		candidate = ReplaceLetterForNIE(candidate);
 		var numeric = Convert.ToInt32(candidate.Substring(0, 8));
 		var modulus = numeric % 23;
 		return ControlMap[modulus];
+	}
+
+	private static string ReplaceLetterForNIE(string candidate)
+	{
+		candidate = candidate.Replace('X', '0');
+		candidate = candidate.Replace('Y', '1');
+		candidate = candidate.Replace('Z', '2');
+		return candidate;
 	}
 }

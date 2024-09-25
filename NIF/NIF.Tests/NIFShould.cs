@@ -67,12 +67,13 @@ namespace NIF.Tests {
 			Assert.That(nif.Number, Is.EqualTo("00000024R"));
 		}
 
-		[Test]
-		public void AcceptNieStartingWithX()
-		{
-			var nif = Nif.NewNif("X0000023T");
+		[TestCase("X0000023T")]
+		[TestCase("Y0000000Z")]
+		[TestCase("Z0000000M")]
+		public void AcceptNieStartingWithX(string candidate) {
+			var nif = Nif.NewNif(candidate);
 
-			Assert.That(nif.Number, Is.EqualTo("X0000023T"));
+			Assert.That(nif.Number, Is.EqualTo(candidate));
 		}
 	}
 }
